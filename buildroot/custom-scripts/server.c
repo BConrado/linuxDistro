@@ -7,6 +7,11 @@
 #include <stdlib.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <time.h>
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
  
 #define BUFLEN	1024	//Max length of buffer
 #define PORT	8000	//The port on which to listen for incoming data
@@ -14,7 +19,9 @@
 
 char http_ok[] = "HTTP/1.0 200 OK\r\nContent-type: text/html\r\nServer: Test\r\n\r\n";
 char http_error[] = "HTTP/1.0 400 Bad Request\r\nContent-type: text/html\r\nServer: Test\r\n\r\n";
-char page[] = "<html>\n<head>\n<title>\nTest page\n</title>\n</head>\n<body>\n<p>Hello World!</p>\n</body>\n</html>\n";
+char page[] = "<html>\n<head>\n<title>\nTest page\n</title>\n</head>\n<body>\n<p> Hello World!</p>\n</body>\n</html>\n";
+
+
 
 
 void die(char *s)
